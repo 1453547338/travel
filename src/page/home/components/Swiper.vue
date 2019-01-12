@@ -16,6 +16,7 @@
 
 <script>
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import axios from 'vue-axios'
     export default {
         name: "Swiper",
         data () {
@@ -39,6 +40,18 @@
             swiper,
             swiperSlide
         },
+        created() {
+            this.clickaxios()
+        },
+        methods:{
+           clickaxios (){
+               this.axios.get('http://112.74.189.163/banner').then((res)=>{
+                   console.log(res)
+               })
+           }
+        }
+
+
     }
 </script>
 

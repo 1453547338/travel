@@ -5,7 +5,7 @@
                 返回
          </div>
         <div class="header-center">
-            <input type="text" value="输入游玩城市">
+            <input type="text" value="输入城市">
         </div>
         <div class="header-right">
             三亚

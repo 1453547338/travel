@@ -4,7 +4,7 @@
         <!--<p class="" @click="handelclick()">home</p>-->
         <home-header></home-header>
         <home-swiper></home-swiper>
-
+        <home-icons></home-icons>
     </div>
 
 </template>
@@ -12,6 +12,7 @@
 <script>
     import HomeHeader from './components/Header'  //引入组件
     import HomeSwiper from './components/Swiper'
+    import HomeIcons from './components/Icons'
     export default {
         // 组件得名字
         name: "home",
@@ -29,7 +30,8 @@
         components:{
             //声明组件
             HomeHeader ,
-            HomeSwiper
+            HomeSwiper,
+            HomeIcons
         }
 
     }

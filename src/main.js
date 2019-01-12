@@ -4,7 +4,10 @@ import App from './App.vue'
 import router from './router/router'
 import './assets/styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import axios from 'vue-axios'
 
+
+Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false;
 
