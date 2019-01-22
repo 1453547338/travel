@@ -1,22 +1,31 @@
 <template>
     <div class="header">
+        <router-link to="/City">
          <div class="header-left">
              <span class="iconfont">&#xe624;</span>
-                返回
+             城市
          </div>
+        </router-link>
         <div class="header-center">
             <input type="text" value="输入城市">
         </div>
-        <div class="header-right">
-            三亚
-            <span class="iconfont"> &#xe64a;</span>
-        </div>
+
+            <div class="header-right">
+                <router-link tag="div" to="/login"> <span class="iconfont"> &#xe64a; 登陆</span></router-link>
+            </div>
+
     </div>
 </template>
 
 <script>
     export default {
         name: "Header",
+        // props:{
+        //     city:String
+        // },
+        mounted (){
+            // console.log(this.city+'dsad')
+        }
     }
 </script>
 

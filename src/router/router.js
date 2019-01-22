@@ -4,22 +4,26 @@ import '@/assets/styles/reset.styl'
 import '@/assets/styles/base.styl'
 
 import home from '@/page/home/home'
-
+import login from '@/page/login/login'
+import City from  '@/page/city/City'
 
 Vue.use(Router)
+
 export default  new  Router({
-    mode:'history',//除去localhost:8080的#号
     routes:[
         {
         path: '/',
         name:'home',
         component:home
-        },
-        // {
-        //      path:'/list',
-        //      name:'list',
-        //      component:list
-        // }
+        }, {
+         path:'/login',
+         name:'login',
+         component:login
+        },{
+            path:'/city',
+            name:'City',
+            component:City
+        }
     ]
 
 })

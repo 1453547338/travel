@@ -4,12 +4,16 @@ import App from './App.vue'
 import router from './router/router'
 import './assets/styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
-import axios from 'vue-axios'
+import vueAxios from 'vue-axios'
+import axios from 'axios'
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
 
 
-Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
+Vue.use(vueAxios , axios)
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false;
+Vue.use(MuseUI);
 
 // Vue.use(VueAwesomeSwiper)
 /*动态设置 :root 的font-size*/
