@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import App from './App.vue'
+import store from'./store/index.js'
 import router from './router/router'
 import './assets/styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
@@ -8,6 +9,7 @@ import vueAxios from 'vue-axios'
 import axios from 'axios'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
+
 
 
 Vue.use(vueAxios , axios)
@@ -68,7 +70,8 @@ new Vue({
   render: h => h(App),
 
   // es6语法省略 router:router
-  router
+  router,
+  store
 
 }).$mount('#app')
 

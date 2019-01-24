@@ -1,8 +1,13 @@
 <template>
     <div>
         <ul class="list">
-            <li class="item" v-for="(item,key) of cities" :key="key">
-                {{key}}
+            <li class="item" v-for="item of letters" :key="item" :ref="item"
+                @click="handleLetterClick"
+                @touchstart="handleTouchStart"
+                @touchsmove="handleTouchMove"
+                @touchend="handleTouchEnd"
+            >
+                {{item}}
             </li>
         </ul>
     </div>
@@ -13,7 +18,54 @@
         name: "Alphabet",
         props:{
             cities:Object
+        },
+        computed:{
+            letters() {
+                const letters = []
+                for(let i in this.cities){
+                    letters.push(i)
+                }
+                return letters
+            }
+        },
+        data(){
+            return{
+                touchStatus:false,
+                startY: 0,
+                timer: null
+            }
+        },
+        updated () {
+            this.startY = this.$refs['A'][0].offsetTop
+        },
+        methods:{
+            handleLetterClick(e){
+                // $emit向外触发事件,父子关系
+                this.$emit('change',e.target.innerText)
+                // console.log(e.target.innerText)
+            },
+            handleTouchStart (){
+                this.touchStatus = true
+            },
+            handleTouchMove (e) {
+                if (this.touchStatus) {
+                    if (this.timer) {
+                        clearTimeout(this.timer)
+                    }
+                    this.timer = setTimeout(() => {
+                        const touchY = e.touches[0].clientY - 79
+                        const index = Math.floor((touchY - this.startY) / 20)
+                        if (index >= 0 && index < this.letters.length) {
+                            this.$emit('change', this.letters[index])
+                        }
+                    }, 16)
+                }
+            },
+            handleTouchEnd(){
+                this.touchStatus = false
+            }
         }
+
     }
 </script>
 
@@ -30,7 +82,7 @@
         .item
             line-height 0.44rem
             text-align center
-            color: #21bbff
+            color: #1cacff
             font-size 0.2rem
 
 

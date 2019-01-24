@@ -1,7 +1,7 @@
 <template>
     <div>
     <div class="title">热销推荐</div>
-    <ul v-for="item in recommendList" :key="item.id">
+    <ul v-for="item in list" :key="item.id">
 
         <li class="item border-bottom">
                 <img :src="item.imgUrl" alt="" class="item-img">
@@ -21,25 +21,28 @@
     export default {
         name: "Recommend",
         // 定义循环得数组
+        props:{
+            list:Array
+        },
         data(){
             return{
-                recommendList:[{
-                    id:'001',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1712/95/95f38f28a6ff19cba3.img.jpg_200x200_af967e35.jpg',
-                    title:'水奥雪世界',
-                    desc:'水奥雪世界五星级'
-                },{
-                    id:'002',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1712/95/95f38f28a6ff19cba3.img.jpg_200x200_af967e35.jpg',
-                    title:'水奥雪世界2',
-                    desc:'水奥雪世界五星级222'
-                    },{
-                    id:'003',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1712/95/95f38f28a6ff19cba3.img.jpg_200x200_af967e35.jpg',
-                    title:'水奥雪世界3',
-                    desc:'水奥雪世界五星级333'
-                }
-                ]
+                // recommendList:[{
+                //     id:'001',
+                //     imgUrl:'http://img1.qunarzz.com/sight/p0/1712/95/95f38f28a6ff19cba3.img.jpg_200x200_af967e35.jpg',
+                //     title:'水奥雪世界',
+                //     desc:'水奥雪世界五星级'
+                // },{
+                //     id:'002',
+                //     imgUrl:'http://img1.qunarzz.com/sight/p0/1712/95/95f38f28a6ff19cba3.img.jpg_200x200_af967e35.jpg',
+                //     title:'水奥雪世界2',
+                //     desc:'水奥雪世界五星级222'
+                //     },{
+                //     id:'003',
+                //     imgUrl:'http://img1.qunarzz.com/sight/p0/1712/95/95f38f28a6ff19cba3.img.jpg_200x200_af967e35.jpg',
+                //     title:'水奥雪世界3',
+                //     desc:'水奥雪世界五星级333'
+                // }
+                // ]
             }
         }
     }
@@ -70,7 +73,8 @@
                 ellipse()
             .item-desc
                 line-height .4rem
-                color #D88DFF
+                color #17d0ff
+                font-size 0.28rem
                 ellipse()
             .item-button
                 background #ff9300
@@ -79,5 +83,7 @@
                 border-radius .06rem
                 color #fff
                 line-height 0.44rem
+                font-size 0.24rem
+                border none
 
 </style>

@@ -22,11 +22,7 @@
             swiper,
             swiperSlide
         },
-        data () {
-            return{
 
-        }
-     },
         computed:{
             pages () {
                 const pages = []

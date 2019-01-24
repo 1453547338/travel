@@ -6,7 +6,7 @@
         <home-header></home-header>
         <home-swiper></home-swiper>
         <home-icons :list="iconList"></home-icons>
-        <home-recommend></home-recommend>
+        <home-recommend :list="recommendlist"></home-recommend>
     </div>
 
 </template>
@@ -25,7 +25,8 @@
           return{
             //存一个back
 
-            iconList:[]
+            iconList:[],
+            recommendlist:[],
           }
         },
         methods:{
@@ -46,6 +47,7 @@
                 if(res.ret && res.data){
                   const data = res.data
                     this.iconList = data.iconList
+                    this.recommendlist = data.recommendList
                 }
                 console.log(res)
             }
